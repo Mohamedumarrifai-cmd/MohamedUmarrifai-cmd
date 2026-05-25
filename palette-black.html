@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Palette — Black Theme</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        color-scheme: dark;
+        font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        --bg: #07090f;
+        --surface: #121820;
+        --surface-soft: #19202c;
+        --text: #f5f7fb;
+        --muted: #8a98b5;
+        --accent: #7d6cff;
+        --accent-strong: #4f55ff;
+        --accent-soft: #a89dff;
+        --highlight: #3dd1ff;
+        --border: rgba(255,255,255,0.12);
+        --shadow: 0 28px 80px rgba(0, 0, 0, 0.35);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html, body {
+        margin: 0;
+        min-height: 100%;
+        background: radial-gradient(circle at top left, rgba(129, 108, 255, 0.16), transparent 23%),
+          radial-gradient(circle at bottom right, rgba(61, 209, 255, 0.14), transparent 18%),
+          var(--bg);
+        color: var(--text);
+      }
+
+      body {
+        font-size: 16px;
+        line-height: 1.6;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      .page {
+        min-height: 100vh;
+        padding: 40px 24px 60px;
+      }
+
+      .page-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 28px;
+      }
+
+      .brand-mark {
+        width: 48px;
+        height: 48px;
+        border-radius: 14px;
+        background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+        display: grid;
+        place-items: center;
+        color: white;
+        font-weight: 800;
+      }
+
+      h1 {
+        font-size: clamp(2.5rem, 4vw, 4rem);
+        margin: 0;
+      }
+
+      .intro {
+        max-width: 760px;
+        margin: 22px 0 48px;
+        color: var(--muted);
+      }
+
+      .palette-grid {
+        display: grid;
+        gap: 24px;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      }
+
+      .swatch {
+        border-radius: 24px;
+        padding: 28px 22px;
+        min-height: 190px;
+        display: grid;
+        gap: 18px;
+        justify-content: stretch;
+        color: white;
+        box-shadow: var(--shadow);
+        border: 1px solid rgba(255,255,255,0.08);
+      }
+
+      .swatch span {
+        display: inline-flex;
+        gap: 0.5rem;
+        align-items: center;
+        font-size: 0.95rem;
+      }
+
+      .swatch strong {
+        font-size: 1.1rem;
+      }
+
+      .swatch .chip {
+        width: 42px;
+        height: 42px;
+        border-radius: 14px;
+        border: 1px solid rgba(255,255,255,0.16);
+      }
+
+      .swatch--bg { background: var(--bg); }
+      .swatch--surface { background: var(--surface); }
+      .swatch--surface-soft { background: var(--surface-soft); }
+      .swatch--accent { background: var(--accent); }
+      .swatch--highlight { background: var(--highlight); }
+      .swatch--muted { background: rgba(255,255,255,0.08); color: var(--text); }
+
+      .components {
+        margin-top: 52px;
+        display: grid;
+        gap: 32px;
+      }
+
+      .component-card {
+        background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+        border: 1px solid var(--border);
+        border-radius: 30px;
+        padding: 32px;
+        box-shadow: var(--shadow);
+      }
+
+      .component-card h2 {
+        margin: 0 0 18px;
+        font-size: 1.55rem;
+      }
+
+      .button-sample {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        border: none;
+        border-radius: 999px;
+        padding: 16px 26px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .button-primary { background: var(--accent); color: white; box-shadow: 0 18px 40px rgba(125,108,255,0.28); }
+      .button-secondary { background: rgba(255,255,255,0.08); color: white; border: 1px solid rgba(255,255,255,0.14); }
+
+      .button-sample:hover { transform: translateY(-2px); }
+
+      .card-sample {
+        display: grid;
+        gap: 18px;
+        background: var(--surface-soft);
+        border: 1px solid rgba(255,255,255,0.10);
+        border-radius: 26px;
+        padding: 28px;
+      }
+
+      .card-sample h3 {
+        margin: 0;
+        color: white;
+        font-size: 1.25rem;
+      }
+
+      .card-sample p {
+        color: var(--muted);
+        margin: 0;
+      }
+
+      .tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 16px;
+        border-radius: 999px;
+        background: rgba(255,255,255,0.05);
+        color: var(--text);
+        font-size: 0.92rem;
+      }
+
+      .footer-note {
+        margin-top: 50px;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      @media (max-width: 760px) {
+        .page { padding: 24px 16px 40px; }
+        .components { gap: 24px; }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <div class="page-inner">
+        <header class="brand">
+          <div class="brand-mark">MU</div>
+          <div>
+            <p style="margin: 0; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent);"><small>Portfolio Style Guide</small></p>
+            <h1>Black Portfolio Palette</h1>
+          </div>
+        </header>
+
+        <p class="intro">A modern, premium dark palette for a portfolio that feels confident, elegant, and easy to scan. This theme is optimized for high-contrast typography, vibrant accents, and polished interface components.</p>
+
+        <section class="palette-grid">
+          <article class="swatch swatch--bg">
+            <div class="chip" style="background: var(--bg);"></div>
+            <span><strong>Background</strong> #07090F</span>
+          </article>
+          <article class="swatch swatch--surface">
+            <div class="chip" style="background: var(--surface);"></div>
+            <span><strong>Surface</strong> #121820</span>
+          </article>
+          <article class="swatch swatch--surface-soft">
+            <div class="chip" style="background: var(--surface-soft);"></div>
+            <span><strong>Panel</strong> #19202C</span>
+          </article>
+          <article class="swatch swatch--accent">
+            <div class="chip" style="background: var(--accent);"></div>
+            <span><strong>Accent</strong> #7D6CFF</span>
+          </article>
+          <article class="swatch swatch--highlight">
+            <div class="chip" style="background: var(--highlight);"></div>
+            <span><strong>Highlight</strong> #3DD1FF</span>
+          </article>
+          <article class="swatch swatch--muted">
+            <div class="chip" style="background: rgba(255,255,255,0.08);"></div>
+            <span><strong>Muted</strong> #8A98B5</span>
+          </article>
+        </section>
+
+        <section class="components">
+          <article class="component-card">
+            <h2>Navigation & Hero</h2>
+            <p style="color: var(--muted);">Clean navigation, high-impact headings, and bright call-to-action buttons that keep focus on your services and portfolio.</p>
+            <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 24px;">
+              <button class="button-sample button-primary">View Projects</button>
+              <button class="button-sample button-secondary">Contact Me</button>
+            </div>
+          </article>
+
+          <article class="component-card">
+            <h2>Card Interface</h2>
+            <div class="card-sample">
+              <div class="tag">Product Design</div>
+              <h3>Premium web experiences</h3>
+              <p>Use deep charcoal surfaces with subtle glow accents for clean project previews that feel rich and modern.</p>
+            </div>
+          </article>
+        </section>
+
+        <p class="footer-note">This black theme pairs well with motion, glassmorphism accents, and crisp typography for a portfolio that reads as premium and polished.</p>
+      </div>
+    </main>
+  </body>
+</html>
